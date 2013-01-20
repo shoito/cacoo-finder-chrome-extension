@@ -1,8 +1,8 @@
 Cacoo Finder
 ============
-(https://raw.github.com/shoito/cacoo-finder/master/images/440x280.png)
-
 Cacoo Finder is easy to use [Cacoo (https://cacoo.com/)](https://cacoo.com/), "unofficial" extension for Google Chrome.
+
+![Logo](https://raw.github.com/shoito/cacoo-finder/master/images/440x280.png)
 
 What you can do with Cacoo Finder
 
@@ -32,8 +32,7 @@ Cacoo - Web上で図の作成＆リアルタイムコラボレーションサー
 
 ScreenShots
 ----
-(https://raw.github.com/shoito/cacoo-finder/master/images/1280x800_22.18.05.png)
-(https://raw.github.com/shoito/cacoo-finder/master/images/400x275.png)
+![Full image](https://raw.github.com/shoito/cacoo-finder/master/images/1280x800_22.18.05.png)
 
 License
 ----
