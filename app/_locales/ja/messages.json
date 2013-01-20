@@ -1,0 +1,8 @@
+{
+   "extDescription": {
+      "message": "Web上で図の作成＆リアルタイムコラボレーションができるCacoo( https://cacoo.com/ )の非公式Chrome拡張です。Cacooの図やシート、コメントを確認したり、簡単にコメントが付けられます。"
+   },
+   "extName": {
+      "message": "Cacoo Finder"
+   }
+}

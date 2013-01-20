@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cacoo Finder Options</title>
+		<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>Please enter your Cacoo API Key</h2>
+		<form>
+			<fieldset>
+				<div class="clearfix">
+					<label for="apiKey">API Key</label>
+					<input class="xlarge" type="text" name="apiKey" data-bind="value:apiKey"/>
+				</div>
+				<div class="actions">
+					<button id="saveButton" class="btn large primary" data-bind="click:saveApiKey">Save</button>
+					<button id="resetButton" class="btn large secondary" data-bind="click:resetApiKey">Reset</button>
+				</div>
+			</fieldset>
+		</form>
+        <div class="externalLink">
+        	<a class="btn info" href="https://cacoo.com/profile/api" target="_blank">Cacoo API Key Setting</a>
+        </div>
+
+        
+ 		<div class="alert-message fade in" data-alert="alert" style="display: none; z-index: 5;">
+            <p><strong></strong></p>
+        </div>
+
+        <script type="text/javascript" src="scripts/base.js"></script>
+        <script type="text/javascript" src="scripts/option.js"></script>
+	</body>
+</html>

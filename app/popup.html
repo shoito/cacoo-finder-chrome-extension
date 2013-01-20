@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cacoo Finder</title>
+		<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<style type="text/css">body {width: 540px;}</style>
+	</head>
+	<body>
+		<div class="topbar-wrapper" style="z-index: 5;" data-bind="if: visibleHeader">
+			<div class="topbar" data-dropdown="dropdown">
+				<div class="topbar-inner">
+					<div class="container">
+						<h3><a id="logo" href="https://cacoo.com" target="_blank"></a></h3>
+						<ul class="nav">
+							<li id="all" class="active" data-bind="css: {active:filter()=='all'}">
+								<a href="#" data-bind="click:changeFilter.bind($root, 'all')">All</a>
+							</li>
+							<li id="own" data-bind="css: {active:filter()=='own'}">
+								<a href="#" data-bind="click:changeFilter.bind($root, 'own')">Own</a>
+							</li>
+							<li id="shared" data-bind="css: {active:filter()=='shared'}">
+								<a href="#" data-bind="click:changeFilter.bind($root, 'shared')">Shared</a>
+							</li>
+							<li class="action">
+								<button class="btn small success" data-bind="click: createNewDiagram" rel="popover" data-original-title="Confirm" 
+								data-content="Are you sure you want to create the new diagram? When you click this button, create the new diagram on Cacoo">Create New</button>
+							</li>
+							<!--<li class="dropdown">
+								<a href="javascript:void(0)" class="dropdown-toggle">Shared Folder</a>
+								<ul class="dropdown-menu">
+									<li><a href="javascript:void(0)">Folder0</a></li>
+									<li><a href="javascript:void(0)">Folder1</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Status</a></li>
+							-->
+						</ul>
+					</div>
+				</div><!-- /topbar-inner -->
+			</div><!-- /topbar -->
+		</div>
+		
+		<div data-bind="template: {name: currentMode() + '-page'}"></div>
+
+		<script type="text/html" id="diagrams-page">
+		<section>
+			<!-- ko foreach: filteredDiagrams -->
+			<article class="diagram clearfix" data-bind="attr: {id: diagramId}">
+				<div class="diagramContent">
+					<div class="thumbnail">
+						<a data-bind="attr: {href:url}" target="_blank">
+							<img data-bind="attr: {src:imageUrlForApi + '?width=96&hight=72&apiKey=' + $root.apiKey()}">
+						</a>
+					</div>
+					<div class="diagramInfo">
+						<div class="title">
+							<a data-bind="text:title, attr: {href:url}" target="_blank"></a>
+						</div>
+						<div class="description" data-bind="text:description"></div>
+					</div>
+					<div class="additionalInfo">
+						<span class="updated" data-bind="text:updated"></span>
+					</div>
+				</div>
+				<ul class="diagramMenu">
+					<li>
+						<a href="#" data-bind="click: $root.showSheets.bind($root, diagramId)">
+							<img alt="Sheet" title="Show Sheets" src="images/sheet.png">
+						</a>
+					</li>
+					<li>
+						<a href="#" data-bind="click: $root.showComments.bind($root, diagramId)"><img alt="Comment" title="Show Comments" src="images/comment.png"></a>
+					</li>
+				</ul>
+			</article>
+			<!-- /ko -->
+		</section>
+		</script>
+
+		<script type="text/html" id="sheets-page">
+		<section>
+			<!-- ko foreach: sheets -->
+			<article class="sheet clearfix" data-bind="attr: {id:uid}">
+				<div class="sheetContent">
+					<div class="thumbnail">
+						<a data-bind="attr: {href:url}" target="_blank">
+							<img data-bind="attr: {src:imageUrlForApi + '?width=96&hight=72&apiKey=' + $root.apiKey()}">
+						</a>
+					</div>
+					<div class="sheetInfo">
+						<div class="title">
+							<a data-bind="text:name, attr: {href:url}" target="_blank"></a>
+						</div>
+					</div>
+				</div>
+			</article>
+			<!-- /ko -->
+		</section>
+		</script>
+
+		<script type="text/html" id="comments-page">
+		<section>
+			<form>
+				<div>
+					<textarea id="commentArea" name="commentArea" class="xxlarge" row="5" data-bind="value:inputComment"></textarea>
+				</div>
+				<div class="clearfix">
+					<input id="createCommentButton" class="btn primary" value="Comment" data-bind="click:createComment"/>
+				</div>
+			</form>
+		</section>
+		<section>
+			<!-- ko foreach: comments -->
+ 	 		<article class="comment clearfix">
+ 	 			<div class="commentContent">
+					<div class="userIcon">
+						<img data-bind="attr: {src:user.imageUrl}" />
+					</div>
+					<div class="commentInfo">
+						<div class="name" data-bind="text:user.nickname"></div>
+						<div class="content" data-bind="text:content"></div>
+					</div>
+					<div class="additionalInfo">
+						<span class="updated" data-bind="text:updated"></span>
+					</div>
+				</div>
+			</article>
+			<!-- /ko -->
+		</section>
+		</script>
+
+		<script type="text/html" id="apikey-page">
+		<section>
+			<h2>Please enter your Cacoo API Key</h2>
+			<form>
+				<fieldset>
+					<div class="clearfix">
+						<label for="apiKey">API Key</label>
+						<input class="xlarge" type="text" name="apiKey" data-bind="value:apiKey"/>
+					</div>
+					<div class="actions">
+						<button id="saveButton" class="btn large primary" data-bind="click:saveApiKey">Save</button>
+						<button id="resetButton" class="btn large secondary" data-bind="click:resetApiKey">Reset</button>
+					</div>
+				</fieldset>
+			</form>
+	        <div class="externalLink">
+	        	<a class="btn info" href="https://cacoo.com/profile/api" target="_blank">Cacoo API Key Setting</a>
+	        </div>
+		</section>
+		</script>
+
+ 		<div class="alert-message fade in" data-alert="alert" style="display: none; z-index: 5;">
+            <p><strong></strong></p>
+        </div>
+
+        <script type="text/javascript" src="scripts/base.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+	</body>
+</html>

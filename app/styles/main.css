@@ -1,0 +1,183 @@
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin: 0;
+	padding: 0;
+}
+body {
+	min-height: 140px;
+	font-size: 14px;
+	font-family:"lucida grande",tahoma,verdana,arial,'Hiragino Kaku Gothic Pro',Meiryo,'MS PGothic',sans-serif;
+}
+.topbar-wrapper {
+	background-color: #0050c5;
+	margin-bottom: 40px;
+}
+.topbar-inner, .topbar, .fill {
+	height: 40px;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1588e8), color-stop(100%, #026ec8));
+	color: #fff;
+}
+.topbar a {
+	color: #ddd;
+}
+.topbar div > ul .active > a, .nav .active > a {
+	background-color: #026ec8;
+}
+.topbar div > ul .menu-dropdown, .nav .menu-dropdown, .topbar div > ul .dropdown-menu, .nav .dropdown-menu {
+	background-color: #026ec8;
+}
+.topbar div > ul .menu-dropdown li a:hover, .nav .menu-dropdown li a:hover, .topbar div > ul .dropdown-menu li a:hover, .nav .dropdown-menu li a:hover {
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1588e8), color-stop(100%, #026ec8));
+	color: #fff;
+}
+.topbar div > ul .menu-dropdown li a, .nav .menu-dropdown li a, .topbar div > ul .dropdown-menu li a, .nav .dropdown-menu li a {
+	color: #ddd;
+}
+.nav .action {
+	margin-left: 24px;
+}
+.nav button {
+	margin-top: 5px;
+}
+#logo {
+	display: block;
+	background: url(../images/cacoo_s.png) no-repeat;
+	margin: 6px 6px 0 6px;
+	padding: 0;
+	height: 28px;
+	width: 101px;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+    /*	height: 0;  Chrome canary and dev crashed */
+}
+article.diagram, article.sheet {
+	border-bottom: 1px #ccc solid;
+	border-left: 1px #ccc solid;
+	border-right: 1px #ccc solid;
+	padding: 5px 3px 3px 3px;
+}
+article.diagram:hover, article.sheet:hover {
+	border: 1px #0050c5 solid;
+	margin-top: -1px;
+}
+div.diagramContent, div.sheetContent {
+	float: left;
+	width: 480px;
+}
+ul.diagramMenu {
+	float: right;
+	width: 20px;
+	margin: 0 0 18px 4px;
+	list-style-type: none;
+}
+div.thumbnail {
+	float: left;
+	min-height: 72px;
+	min-width: 96px;
+	margin: 0 6px 0 0;
+}
+div.thumbnail img {
+	max-height: 72px;
+	max-width: 96px;
+}
+div.diagramInfo, div.sheetInfo {
+	min-height: 72px;
+	margin: 0 0 4px 0;
+}
+div.title {
+	font-weight: bold;
+}
+div.title a {
+	text-decoration: none;
+}
+div.description {
+	word-break: break-all;
+	font-size: 0.9em;
+}
+span.updated {
+	float: left;
+	color: #aaa;
+	font-size: 0.8em;
+}
+
+/* comment start */
+article.comment {
+	border-bottom: 1px #ccc solid;
+	border-left: 1px #ccc solid;
+	border-right: 1px #ccc solid;
+	padding: 5px 8px 5px 5px;
+}
+article.comment:hover {
+	border: 1px #0050c5 solid;
+	margin-top: -1px;
+}
+div.commentContent {
+	float: left;
+	width: 480px;
+}
+div.userIcon {
+	float: left;
+	margin: 0 6px 0 0;
+}
+div.userIcon img {
+	height: 32px;
+	width: 32px;
+}
+div.commentInfo {
+	margin: 0 0 4px 0;
+}
+div.name {
+	font-weight: bold;
+	margin: 0 0 4px 0;
+}
+div.content {
+	word-break: break-all;
+	font-size: 0.9em;
+}
+div.content pre {
+	margin: 0 0 0 36px;
+}
+article.comment .additionalInfo {
+	margin: 0 0 0 36px;
+}
+#commentArea {
+	height: 64px;
+	width: 99%;
+	margin: 0 0 5px 0;
+}
+#createCommentButton {
+	float: right;
+	height: 18px;
+	width: 64px;
+	padding: 5px 7px 6px;
+}
+form {
+	padding: 6px;
+	border-bottom: 1px #ccc solid;
+	margin-bottom: 0;
+}
+form .clearfix {
+	margin-bottom: 0;
+}
+/* comment end */
+
+
+label {
+	font-size: 1.2em;
+	float: none;
+}
+input {
+	font-size: 1.3em;
+	height: 36px;
+}
+
+.externalLink {
+	float: right;
+	padding: 0 12px 0 0;
+}

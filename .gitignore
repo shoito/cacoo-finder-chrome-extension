@@ -1,0 +1,14 @@
+.DS_Store
+*.log
+*~
+*.bak
+*.swp
+
+.idea/
+
+temp/
+dist/
+cache/
+
+npm-debug.log
+node_modules/

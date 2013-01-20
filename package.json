@@ -1,0 +1,12 @@
+{
+  "author": "shoito",
+  "name": "CacooFinder",
+  "version": "0.2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-contrib-less": "~0.3.2",
+    "mocha-phantomjs": "~1.1.1",
+    "mocha": "~1.7.4"
+  },
+  "optionalDependencies": {}
+}
