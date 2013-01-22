@@ -1,0 +1,183 @@
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 140px;
+    font-size: 14px;
+    font-family:"lucida grande",tahoma,verdana,arial,'Hiragino Kaku Gothic Pro',Meiryo,'MS PGothic',sans-serif;
+}
+#logo {
+    display: block;
+    background: url(../images/cacoo_s.png) no-repeat;
+    margin: 6px 6px 0 6px;
+    padding: 0;
+    height: 28px;
+    width: 101px;
+}
+#commentArea {
+    height: 64px;
+    width: 99%;
+    margin: 0 0 5px 0;
+}
+#createCommentButton {
+    float: right;
+    height: 18px;
+    width: 64px;
+    padding: 5px 7px 6px;
+}
+label {
+    font-size: 1.2em;
+    float: none;
+}
+form {
+    padding: 6px;
+    border-bottom: 1px #ccc solid;
+    margin-bottom: 0;
+    .clearfix {
+        margin-bottom: 0;
+    }
+}
+input {
+    font-size: 1.3em;
+    height: 36px;
+}
+.description {
+    word-break: break-all;
+    font-size: 0.9em;
+}
+.userIcon {
+    float: left;
+    margin: 0 6px 0 0;
+    img {
+        height: 32px;
+        width: 32px;
+    }
+}
+.commentContent {
+    float: left;
+    width: 480px;
+}
+.nav {
+    button {
+        margin-top: 5px;
+    }
+    .action {
+        margin-left: 24px;
+    }
+}
+.comment {
+    border-bottom: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    padding: 5px 8px 5px 5px;
+    &:hover {
+        border: 1px #0050c5 solid;
+        margin-top: -1px;
+    }
+    .additionalInfo {
+        margin: 0 0 0 36px;
+    }
+}
+.diagramInfo, .sheetInfo {
+    min-height: 72px;
+    margin: 0 0 4px 0;
+}
+.diagram:hover, .sheet:hover {
+    border: 1px #0050c5 solid;
+    margin-top: -1px;
+}
+.diagram, .sheet {
+    border-bottom: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    padding: 5px 3px 3px 3px;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+}
+.topbar div > ul .active > a, .nav .active > a {
+    background-color: #026ec8;
+}
+.topbar {
+    a {
+        color: #ddd;
+    }
+}
+.topbar div > ul .menu-dropdown li a:hover, .nav .menu-dropdown li a:hover, .topbar div > ul .dropdown-menu li a:hover, .nav .dropdown-menu li a:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1588e8), color-stop(100%, #026ec8));
+    color: #fff;
+}
+.topbar div > ul .menu-dropdown, .nav .menu-dropdown, .topbar div > ul .dropdown-menu, .nav .dropdown-menu {
+    background-color: #026ec8;
+}
+.topbar-inner, .topbar, .fill {
+    height: 40px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1588e8), color-stop(100%, #026ec8));
+    color: #fff;
+}
+.updated {
+    float: left;
+    color: #aaa;
+    font-size: 0.8em;
+}
+.title {
+    font-weight: bold;
+    a {
+        text-decoration: none;
+    }
+}
+.topbar div > ul .menu-dropdown li a, 
+.nav .menu-dropdown li a, 
+.topbar div > ul .dropdown-menu li a, 
+.nav .dropdown-menu li a {
+    color: #ddd;
+}
+.commentInfo {
+    margin: 0 0 4px 0;
+}
+.diagramMenu {
+    float: right;
+    width: 20px;
+    margin: 0 0 18px 4px;
+    list-style-type: none;
+}
+.diagramContent, .sheetContent {
+    float: left;
+    width: 480px;
+}
+.content {
+    word-break: break-all;
+    font-size: 0.9em;
+    pre {
+        margin: 0 0 0 36px;
+    }
+}
+.name {
+    font-weight: bold;
+    margin: 0 0 4px 0;
+}
+.thumbnail {
+    float: left;
+    min-height: 72px;
+    min-width: 96px;
+    margin: 0 6px 0 0;
+    img {
+        max-height: 72px;
+        max-width: 96px;
+    }
+}
+.topbar-wrapper {
+    background-color: #0050c5;
+    margin-bottom: 40px;
+}
+.externalLink {
+    float: right;
+    padding: 0 12px 0 0;
+}

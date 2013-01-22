@@ -75,8 +75,8 @@ module.exports = (grunt) ->
 				tasks: ["coffee", "concat"] #reload"
 
 			less:
-				files: ["app/scripts/**/*.less"]
-				tasks: ["less"]
+				files: ["app/styles/**/*.less"]
+				tasks: ["less", "css"]
 
 			# reload:
 			# 	files: ["app/*.html", "app/styles/**/*.css", "app/scripts/**/*.js", "app/images/**/*"]
@@ -128,7 +128,7 @@ module.exports = (grunt) ->
 		
 		# concat css/**/*.css files, inline @import, output a single minified css
 		css:
-			"styles/main.css": ["styles/**/*.css"]
+			"app/styles/main.css": ["temp/styles/**/*.css"]
 
 		
 		# renames JS/CSS to prepend a hash of their contents for easier
