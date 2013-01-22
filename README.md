@@ -34,6 +34,10 @@ ScreenShots
 ----
 ![Full image](https://raw.github.com/shoito/cacoo-finder-chrome-extension/master/images/1280x800_22.18.05.png)
 
+Blog
+----
+Cacoo Finder - ブラウザ拡張 -- [http://blog.air-life.net/2011/11/cacoo-finder.html](http://blog.air-life.net/2011/11/cacoo-finder.html)
+
 License
 ----
 MIT License - [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
