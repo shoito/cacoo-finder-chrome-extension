@@ -11,20 +11,6 @@ module.exports = (grunt) ->
 		# Project configuration
 		# ---------------------
 		
-		# templateFiles:
-		# 	footer: "app/template/footer.tmpl"
-		# 	header: "app/template/header.tmpl"
-		# 	header_static: "app/template/header_static.tmpl"
-		# 	option: "app/template/option.tmpl"
-		# 	result: "app/template/result.tmpl"
-		# 	script: "app/template/script.tmpl"
-		# 	tags: "app/template/tags.tmpl"
-
-		# template:
-		# 	files:
-		# 		"app/template/main.tmpl": "app/app.html"
-		# 		"app/template/main_static.tmpl": "app/index.html"
-
 		# specify an alternate install location for Bower
 		bower:
 			dir: "app/components"
@@ -157,7 +143,6 @@ module.exports = (grunt) ->
 		concat:
 			base:
 				src: [
-					"app/scripts/vendor/md5.min.js"
 					"app/scripts/vendor/jquery-1.9.0.min.js"
 					"app/scripts/vendor/bootstrap.min.js"
 					"app/scripts/vendor/knockout-2.2.1.min.js"
