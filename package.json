@@ -5,6 +5,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt-contrib-less": "~0.3.2",
+    "grunt-coffeelint": "~0.0.3",
     "mocha-phantomjs": "~1.1.1",
     "mocha": "~1.7.4"
   },

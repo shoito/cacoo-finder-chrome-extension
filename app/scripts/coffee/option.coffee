@@ -1,3 +1,3 @@
 $ ->
-	viewModel = new cacoofinder.ViewModel(cacoofinder.ViewModel.APIKEY)
-	ko.applyBindings viewModel
+    viewModel = new cacoofinder.ViewModel(cacoofinder.ViewModel.APIKEY)
+    ko.applyBindings viewModel

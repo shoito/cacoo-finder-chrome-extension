@@ -7,6 +7,7 @@ module.exports = (grunt) ->
 	# https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
 	#
 	grunt.initConfig
+		pkg: "<json:package.json>"
 		
 		# Project configuration
 		# ---------------------
@@ -25,18 +26,29 @@ module.exports = (grunt) ->
 				options:
 					basePath: "app/scripts"
 
+			tests:
+				src: "test/coffee/**/*.coffee"
+				dest: "test/spec/*.js"
+		
+		coffeelint:
+			app: ["app/scripts/coffee/**/*.coffee"]
+			tests: ["tests/coffee/**/*.coffee"]
+
+		coffeelintOptions:
+			"no_trailing_whitespace":
+				"level": "error"
+			"max_line_length":
+				"level": "ignore"
+			"indentation":
+				"value": 4
+				"level": "error"
+			"line_endings":
+				"value": "unix"
+				"level": "error"
 		
 		# compile .scss/.sass to .css using Compass
 		compass:
-			dist:
-				
-				# http://compass-style.org/help/tutorials/configuration-reference/#configuration-properties
-				options:
-					css_dir: "temp/styles"
-					sass_dir: "app/styles"
-					images_dir: "app/images"
-					javascripts_dir: "temp/scripts"
-					force: true
+			dist: {}
 
 		less:
 			development:
@@ -53,16 +65,10 @@ module.exports = (grunt) ->
 				options:
 					basePath: "app/styles"
 					yuicompress: true
-		
-		# generate application cache manifest
-		manifest:
-			dest: ""
 
-		
 		# headless testing through PhantomJS
 		mocha:
 			all: ["test/**/*.html"]
-
 		
 		# default watch configuration
 		watch:
@@ -72,42 +78,15 @@ module.exports = (grunt) ->
 
 			coffee:
 				files: "app/scripts/**/*.coffee"
-				tasks: ["coffee", "concat"] #reload"
+				tasks: ["coffee", "concat"]
 
 			less:
 				files: ["app/styles/**/*.less"]
-				tasks: ["less", "css"]
+				tasks: ["less:development", "css"]
 
 			# reload:
 			# 	files: ["app/*.html", "app/styles/**/*.css", "app/scripts/**/*.js", "app/images/**/*"]
 			# 	tasks: "reload"
-
-		
-		# default lint configuration, change this to match your setup:
-		# https://github.com/cowboy/grunt/blob/master/docs/task_lint.md#lint-built-in-task
-		lint:
-			files: ["Gruntfile.js", "app/scripts/**/*.js", "spec/**/*.js"]
-
-		
-		# specifying JSHint options and globals
-		# https://github.com/cowboy/grunt/blob/master/docs/task_lint.md#specifying-jshint-options-and-globals
-		jshint:
-			options:
-				curly: true
-				eqeqeq: true
-				immed: true
-				latedef: true
-				newcap: true
-				noarg: true
-				sub: true
-				undef: true
-				boss: true
-				eqnull: true
-				browser: true
-
-			globals:
-				jQuery: true
-
 		
 		# Build configuration
 		# -------------------
@@ -198,14 +177,7 @@ module.exports = (grunt) ->
 			wrap: true
 
 	grunt.loadNpmTasks "grunt-contrib-less"
+	grunt.loadNpmTasks "grunt-coffeelint"
 
 	# Alias the `test` task to run the `mocha` task instead
 	grunt.registerTask "test", "mocha"
-
-	grunt.registerTask "template", "Generate html depending on configuration", ->
-		conf = grunt.config("template")
-		files = conf.files
-		Object.keys(files).forEach (key) ->
-			tmpl = grunt.file.read(key)
-			console.log key
-			grunt.file.write files[key], grunt.template.process(tmpl)
