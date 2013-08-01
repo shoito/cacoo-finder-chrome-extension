@@ -1,6 +1,6 @@
 Cacoo Finder
 ============
-Cacoo Finder is easy to use [Cacoo (https://cacoo.com/)](https://cacoo.com/), "unofficial" extension for Google Chrome.
+[Cacoo Finder](https://chrome.google.com/webstore/detail/cacoo-finder/pcfedgjdgkacloiabdlghochjfmnalck) is easy to use [Cacoo (https://cacoo.com/)](https://cacoo.com/), "unofficial" extension for Google Chrome.
 
 ![Logo](https://raw.github.com/shoito/cacoo-finder-chrome-extension/master/images/440x280.png)
 
